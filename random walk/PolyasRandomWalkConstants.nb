@@ -1,0 +1,1591 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     44081,       1399]*)
+(*NotebookOutlinePosition[     44773,       1423]*)
+(*  CellTagsIndexPosition[     44729,       1419]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["P\[OAcute]lya's Random Walk Constants", "Title"],
+
+Cell[CellGroupData[{
+
+Cell["Author", "Subsection"],
+
+Cell["\<\
+Eric W. Weisstein
+January 27, 2004\
+\>", "Text"],
+
+Cell[TextData[{
+  "This notebook downloaded from ",
+  ButtonBox["http://mathworld.wolfram.com/notebooks/Statistics/\
+PolyasRandomWalkConstants.nb",
+    ButtonData:>{
+      URL[ 
+      "http://mathworld.wolfram.com/notebooks/Statistics/\
+PolyasRandomWalkConstants.nb"], None},
+    ButtonStyle->"Hyperlink"],
+  "."
+}], "Text"],
+
+Cell[TextData[{
+  "For more information, see Eric's ",
+  StyleBox["MathWorld",
+    FontSlant->"Italic"],
+  " entry ",
+  ButtonBox["http://mathworld.wolfram.com/PolyasRandomWalkConstants.html",
+    ButtonData:>{
+      URL[ "http://mathworld.wolfram.com/PolyasRandomWalkConstants.html"], 
+      None},
+    ButtonStyle->"Hyperlink"],
+  "."
+}], "Text"],
+
+Cell[TextData[{
+  "For a list of Eric's math packages that may be needed to evaluate this \
+notebook, see ",
+  ButtonBox["http://mathworld.wolfram.com/packages/",
+    ButtonData:>{
+      URL[ "http://mathworld.wolfram.com/packages/"], None},
+    ButtonStyle->"Hyperlink"],
+  ".  An archive of these packages may be downloaded from ",
+  ButtonBox["http://mathworld.wolfram.com/packages/MathWorldPackages.zip",
+    ButtonData:>{
+      URL[ "http://mathworld.wolfram.com/packages/MathWorldPackages.zip"], 
+      None},
+    ButtonStyle->"Hyperlink"],
+  ", as well as from the ",
+  StyleBox["Mathematica Information Center",
+    FontSlant->"Italic"],
+  "'s ",
+  ButtonBox["MathSource item 4775",
+    ButtonData:>{
+      URL[ "http://library.wolfram.com/infocenter/MathSource/4775/"], None},
+    ButtonStyle->"Hyperlink"],
+  ".  A list of Eric's utility packages that may be needed to evaluate this \
+notebook may be downloaded from ",
+  ButtonBox["MathSource item 5087",
+    ButtonData:>{
+      URL[ "http://library.wolfram.com/infocenter/MathSource/5087/"], None},
+    ButtonStyle->"Hyperlink"],
+  "."
+}], "Text"],
+
+Cell["\<\
+\[Copyright]2005 Wolfram Research, Inc. except for portions noted \
+otherwise\
+\>", "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Watson's Triple Integral", "Section"],
+
+Cell[CellGroupData[{
+
+Cell["Numerical", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{
+        FractionBox["3", 
+          SuperscriptBox[
+            RowBox[{"(", 
+              RowBox[{"2", "\[Pi]"}], ")"}], "3"]], 
+        RowBox[{"NIntegrate", "[", 
+          RowBox[{
+            RowBox[{"1", "/", 
+              RowBox[{"(", 
+                RowBox[{"3", "-", 
+                  RowBox[{"Cos", "[", "x", "]"}], "-", 
+                  RowBox[{"Cos", "[", "y", "]"}], "-", 
+                  RowBox[{"Cos", "[", "z", "]"}]}], ")"}]}], ",", 
+            RowBox[{"{", 
+              RowBox[{"x", ",", 
+                RowBox[{"-", "Pi"}], ",", "0", ",", "Pi"}], "}"}], ",", 
+            RowBox[{"{", 
+              RowBox[{"y", ",", 
+                RowBox[{"-", "Pi"}], ",", "0", ",", "Pi"}], "}"}], ",", 
+            RowBox[{"{", 
+              RowBox[{"z", ",", 
+                RowBox[{"-", "Pi"}], ",", "0", ",", "Pi"}], "}"}]}], "]"}]}], 
+      "//", "Timing"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        RowBox[{"62.78`", " ", "Second"}], ",", "1.516385730974395`"}], 
+      "}"}]], "Output",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Analytic Forms", "Subsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    FormBox[
+      FractionBox[
+        RowBox[{
+          SqrtBox[
+            FractionBox["3", "2"]], " ", 
+          RowBox[{"\[CapitalGamma]", "(", 
+            FractionBox["1", "24"], ")"}], " ", 
+          RowBox[{"\[CapitalGamma]", "(", 
+            FractionBox["5", "24"], ")"}], " ", 
+          RowBox[{"\[CapitalGamma]", "(", 
+            FractionBox["7", "24"], ")"}], " ", 
+          RowBox[{"\[CapitalGamma]", "(", 
+            FractionBox["11", "24"], ")"}]}], 
+        RowBox[{"16", " ", 
+          SuperscriptBox["\[Pi]", "3"]}]], TraditionalForm]], "Subsubsection"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"u3", "=", 
+        RowBox[{
+          RowBox[{
+            RowBox[{"Sqrt", "[", "6", "]"}], "/", 
+            RowBox[{"(", 
+              RowBox[{"32", 
+                RowBox[{"Pi", "^", "3"}]}], ")"}]}], 
+          RowBox[{"Times", "@@", 
+            RowBox[{"(", 
+              RowBox[{
+                RowBox[{
+                  RowBox[{"Gamma", "[", 
+                    RowBox[{"#", "/", "24"}], "]"}], "&"}], "/@", 
+                RowBox[{"{", 
+                  RowBox[{"1", ",", "5", ",", "7", ",", "11"}], "}"}]}], 
+              ")"}]}]}]}], ";"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"N", "[", 
+      RowBox[{"u3", ",", "20"}], "]"}]], "Input"],
+
+Cell[BoxData["1.51638605915197801815601215925549879947`20."], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"N", "[", 
+      RowBox[{
+        RowBox[{"1", "-", 
+          FractionBox["1", "u3"]}], ",", "20"}], "]"}]], "Input"],
+
+Cell[BoxData["0.34053732955099914282627318443375865078`20."], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    FormBox[
+      FractionBox[
+        RowBox[{"12", " ", 
+          RowBox[{"(", 
+            RowBox[{
+              RowBox[{"12", " ", 
+                SqrtBox["2"]}], "-", 
+              RowBox[{"10", " ", 
+                SqrtBox["3"]}], "-", 
+              RowBox[{"7", " ", 
+                SqrtBox["6"]}], "+", "18"}], ")"}], " ", 
+          SuperscriptBox[
+            RowBox[{"K", "(", 
+              SuperscriptBox[
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{"(", 
+                      RowBox[{"2", "-", 
+                        SqrtBox["3"]}], ")"}], " ", 
+                    RowBox[{"(", 
+                      RowBox[{
+                        SqrtBox["3"], "-", 
+                        SqrtBox["2"]}], ")"}]}], ")"}], "2"], ")"}], "2"]}], 
+        SuperscriptBox["\[Pi]", "2"]], TraditionalForm]], "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"N", "[", 
+      RowBox[{
+        RowBox[{
+          FractionBox["12", 
+            SuperscriptBox["\[Pi]", "2"]], 
+          RowBox[{"(", 
+            RowBox[{"18", "+", 
+              RowBox[{"12", 
+                RowBox[{"Sqrt", "[", "2", "]"}]}], "-", 
+              RowBox[{"10", 
+                RowBox[{"Sqrt", "[", "3", "]"}]}], "-", 
+              RowBox[{"7", 
+                RowBox[{"Sqrt", "[", "6", "]"}]}]}], ")"}], 
+          RowBox[{
+            RowBox[{"EllipticK", "[", 
+              RowBox[{
+                RowBox[{"(", 
+                  RowBox[{
+                    RowBox[{"(", 
+                      RowBox[{"2", "-", 
+                        RowBox[{"Sqrt", "[", "3", "]"}]}], ")"}], 
+                    RowBox[{"(", 
+                      RowBox[{
+                        RowBox[{"Sqrt", "[", "3", "]"}], "-", 
+                        RowBox[{"Sqrt", "[", "2", "]"}]}], ")"}]}], ")"}], 
+                "^", "2"}], "]"}], "^", "2"}]}], ",", "20"}], "]"}]], "Input"],
+
+Cell[BoxData["1.51638605915197801815601215968142077992`20."], "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    FormBox[
+      RowBox[{"3", " ", 
+        RowBox[{"(", 
+          RowBox[{"18", "+", 
+            RowBox[{"12", " ", 
+              SqrtBox["2"]}], "-", 
+            RowBox[{"10", " ", 
+              SqrtBox["3"]}], "-", 
+            RowBox[{"7", " ", 
+              SqrtBox["6"]}]}], ")"}], " ", 
+        SuperscriptBox[
+          RowBox[{
+            SubscriptBox["\[CurlyTheta]", "3"], "(", 
+            RowBox[{"0", ",", 
+              SuperscriptBox["\[ExponentialE]", 
+                RowBox[{
+                  RowBox[{"-", 
+                    SqrtBox["6"]}], " ", "\[Pi]"}]]}], ")"}], "4"]}], 
+      TraditionalForm]], "Subsubsection"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"N", "[", 
+      RowBox[{
+        RowBox[{"3", 
+          RowBox[{"(", 
+            RowBox[{"18", "+", 
+              RowBox[{"12", 
+                RowBox[{"Sqrt", "[", "2", "]"}]}], "-", 
+              RowBox[{"10", 
+                RowBox[{"Sqrt", "[", "3", "]"}]}], "-", 
+              RowBox[{"7", 
+                RowBox[{"Sqrt", "[", "6", "]"}]}]}], ")"}], 
+          RowBox[{
+            RowBox[{"(", 
+              RowBox[{"1", "+", 
+                RowBox[{"2", 
+                  RowBox[{"Sum", "[", 
+                    RowBox[{
+                      RowBox[{"Exp", "[", 
+                        RowBox[{
+                          RowBox[{"-", 
+                            RowBox[{"k", "^", "2"}]}], " ", "\[Pi]", " ", 
+                          RowBox[{"Sqrt", "[", "6", "]"}]}], "]"}], ",", 
+                      RowBox[{"{", 
+                        RowBox[{"k", ",", "\[Infinity]"}], "}"}]}], "]"}]}]}],
+               ")"}], "^", "4"}]}], ",", "20"}], "]"}]], "Input"],
+
+Cell[BoxData["1.51638605915197801815601215968142071843`20."], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Plots", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"Plot", "[", 
+      RowBox[{
+        RowBox[{"Evaluate", "[", 
+          RowBox[{"Table", "[", 
+            RowBox[{
+              RowBox[{
+                RowBox[{
+                  RowBox[{"BesselI", "[", 
+                    RowBox[{"0", ",", 
+                      RowBox[{"t", "/", "d"}]}], "]"}], "^", "d"}], " ", 
+                RowBox[{"Exp", "[", 
+                  RowBox[{"-", "t"}], "]"}]}], ",", 
+              RowBox[{"{", 
+                RowBox[{"d", ",", "3"}], "}"}]}], "]"}], "]"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "20"}], "}"}]}], "]"}]], "Input"],
+
+Cell[GraphicsData["PostScript", "\<\
+%!
+%%Creator: Mathematica
+%%AspectRatio: .61803 
+MathPictureStart
+/Mabs {
+Mgmatrix idtransform
+Mtmatrix dtransform
+} bind def
+/Mabsadd { Mabs
+3 -1 roll add
+3 1 roll add
+exch } bind def
+%% Graphics
+%%IncludeResource: font Courier
+%%IncludeFont: Courier
+/Courier findfont 10  scalefont  setfont
+% Scaling calculations
+0.0238095 0.047619 0.0147151 0.588604 [
+[.2619 .00222 -3 -9 ]
+[.2619 .00222 3 0 ]
+[.5 .00222 -6 -9 ]
+[.5 .00222 6 0 ]
+[.7381 .00222 -6 -9 ]
+[.7381 .00222 6 0 ]
+[.97619 .00222 -6 -9 ]
+[.97619 .00222 6 0 ]
+[.01131 .13244 -18 -4.5 ]
+[.01131 .13244 0 4.5 ]
+[.01131 .25016 -18 -4.5 ]
+[.01131 .25016 0 4.5 ]
+[.01131 .36788 -18 -4.5 ]
+[.01131 .36788 0 4.5 ]
+[.01131 .4856 -18 -4.5 ]
+[.01131 .4856 0 4.5 ]
+[.01131 .60332 -6 -4.5 ]
+[.01131 .60332 0 4.5 ]
+[ 0 0 0 0 ]
+[ 1 .61803 0 0 ]
+] MathScale
+% Start of Graphics
+1 setlinecap
+1 setlinejoin
+newpath
+0 g
+.25 Mabswid
+[ ] 0 setdash
+.2619 .01472 m
+.2619 .02097 L
+s
+[(5)] .2619 .00222 0 1 Mshowa
+.5 .01472 m
+.5 .02097 L
+s
+[(10)] .5 .00222 0 1 Mshowa
+.7381 .01472 m
+.7381 .02097 L
+s
+[(15)] .7381 .00222 0 1 Mshowa
+.97619 .01472 m
+.97619 .02097 L
+s
+[(20)] .97619 .00222 0 1 Mshowa
+.125 Mabswid
+.07143 .01472 m
+.07143 .01847 L
+s
+.11905 .01472 m
+.11905 .01847 L
+s
+.16667 .01472 m
+.16667 .01847 L
+s
+.21429 .01472 m
+.21429 .01847 L
+s
+.30952 .01472 m
+.30952 .01847 L
+s
+.35714 .01472 m
+.35714 .01847 L
+s
+.40476 .01472 m
+.40476 .01847 L
+s
+.45238 .01472 m
+.45238 .01847 L
+s
+.54762 .01472 m
+.54762 .01847 L
+s
+.59524 .01472 m
+.59524 .01847 L
+s
+.64286 .01472 m
+.64286 .01847 L
+s
+.69048 .01472 m
+.69048 .01847 L
+s
+.78571 .01472 m
+.78571 .01847 L
+s
+.83333 .01472 m
+.83333 .01847 L
+s
+.88095 .01472 m
+.88095 .01847 L
+s
+.92857 .01472 m
+.92857 .01847 L
+s
+.25 Mabswid
+0 .01472 m
+1 .01472 L
+s
+.02381 .13244 m
+.03006 .13244 L
+s
+[(0.2)] .01131 .13244 1 0 Mshowa
+.02381 .25016 m
+.03006 .25016 L
+s
+[(0.4)] .01131 .25016 1 0 Mshowa
+.02381 .36788 m
+.03006 .36788 L
+s
+[(0.6)] .01131 .36788 1 0 Mshowa
+.02381 .4856 m
+.03006 .4856 L
+s
+[(0.8)] .01131 .4856 1 0 Mshowa
+.02381 .60332 m
+.03006 .60332 L
+s
+[(1)] .01131 .60332 1 0 Mshowa
+.125 Mabswid
+.02381 .04415 m
+.02756 .04415 L
+s
+.02381 .07358 m
+.02756 .07358 L
+s
+.02381 .10301 m
+.02756 .10301 L
+s
+.02381 .16187 m
+.02756 .16187 L
+s
+.02381 .1913 m
+.02756 .1913 L
+s
+.02381 .22073 m
+.02756 .22073 L
+s
+.02381 .27959 m
+.02756 .27959 L
+s
+.02381 .30902 m
+.02756 .30902 L
+s
+.02381 .33845 m
+.02756 .33845 L
+s
+.02381 .39731 m
+.02756 .39731 L
+s
+.02381 .42674 m
+.02756 .42674 L
+s
+.02381 .45617 m
+.02756 .45617 L
+s
+.02381 .51503 m
+.02756 .51503 L
+s
+.02381 .54446 m
+.02756 .54446 L
+s
+.02381 .57389 m
+.02756 .57389 L
+s
+.25 Mabswid
+.02381 0 m
+.02381 .61803 L
+s
+0 0 m
+1 0 L
+1 .61803 L
+0 .61803 L
+closepath
+clip
+newpath
+.5 Mabswid
+.02381 .60332 m
+.03279 .50654 L
+.04262 .42688 L
+.05288 .36485 L
+.06244 .32105 L
+.0731 .28363 L
+.0828 .25722 L
+.09413 .23305 L
+.10458 .21542 L
+.12373 .19113 L
+.14451 .17238 L
+.16324 .15975 L
+.18386 .14885 L
+.22415 .13326 L
+.26292 .1225 L
+.30414 .1138 L
+.34385 .10715 L
+.38205 .10188 L
+.42269 .09715 L
+.46182 .09327 L
+.5034 .08968 L
+.54347 .08666 L
+.58202 .08407 L
+.62302 .0816 L
+.66251 .07946 L
+.70048 .07758 L
+.74091 .07575 L
+.77982 .07413 L
+.82118 .07254 L
+.86102 .07113 L
+.89935 .06986 L
+.94013 .0686 L
+.97619 .06756 L
+s
+.02381 .60332 m
+.03279 .50437 L
+.04262 .41905 L
+.05288 .34952 L
+.06244 .2984 L
+.0828 .2204 L
+.09421 .18955 L
+.10458 .16707 L
+.12373 .13574 L
+.13453 .12233 L
+.14451 .11198 L
+.16324 .09655 L
+.18386 .08393 L
+.20327 .07493 L
+.22415 .06743 L
+.24386 .06183 L
+.26537 .05692 L
+.30508 .0501 L
+.34573 .04509 L
+.38486 .04146 L
+.42644 .03846 L
+.4665 .03615 L
+.50506 .03432 L
+.54606 .03269 L
+.58555 .03136 L
+.62352 .03025 L
+.66394 .02923 L
+.70285 .02836 L
+.74421 .02755 L
+.78406 .02685 L
+.82239 .02625 L
+.86317 .02567 L
+.90244 .02517 L
+.94019 .02472 L
+.97619 .02433 L
+s
+.02381 .60332 m
+.03279 .50364 L
+.04262 .41644 L
+.06244 .29089 L
+.07298 .24362 L
+.08426 .2036 L
+.10458 .15127 L
+.1148 .13192 L
+.12589 .11475 L
+.14603 .09119 L
+.16586 .07475 L
+.18689 .06221 L
+.20643 .05365 L
+.22473 .04753 L
+.24497 .04228 L
+.2635 .03852 L
+.28409 .03519 L
+.30321 .03271 L
+.3414 .029 L
+.36192 .02749 L
+.38053 .02633 L
+.4206 .02436 L
+.45915 .02294 L
+.50015 .02178 L
+.53964 .0209 L
+.57761 .02021 L
+.61803 .01961 L
+.65694 .01913 L
+.6983 .0187 L
+.73815 .01835 L
+.77648 .01806 L
+.81726 .01779 L
+.85653 .01757 L
+.89428 .01737 L
+.93448 .01719 L
+.97317 .01704 L
+.97619 .01702 L
+s
+% End of Graphics
+MathPictureEnd
+\
+\>"], "Graphics",
+  GeneratedCell->False,
+  CellAutoOverwrite->False,
+  ImageSize->{288, 177.938},
+  ImageMargins->{{43, 0}, {0, 0}},
+  ImageRegion->{{0, 1}, {0, 1}},
+  ImageCache->GraphicsData["Bitmap", "\<\
+CF5dJ6E]HGAYHf4PAg9QL6QYHg<PAVmbKF5d0`40004P0000/A000`40O003h00Oogoo8Goo001DOol3
+000jOol30004Ool2000hOol30003Ool3000gOol50003Ool20004Ool005=oo`05001oogooOol0000j
+Ool00`00Oomoo`02Ool01000Oomoo`00>7oo00D007ooOomoo`0000=oo`03001oogoo03Eoo`04001o
+ogoo0002Ool01000Oomoo`000goo001GOol00`00Oomoo`0hOol00`00Oomoo`02Ool01000Oomoo`00
+>7oo00<007ooOol01Goo00<007ooOol0=Woo00<007ooOol00Woo00@007ooOol000=oo`00Egoo00<0
+07ooOol0>7oo00<007ooOol00Woo00@007ooOol003Qoo`03001oogoo00Eoo`03001oogoo03Moo`05
+001oogooOol00002Ool00`00Oomoo`01Ool005=oo`@003]oo`03001oogoo009oo`04001oogoo000h
+Ool01000Oomoogoo1000=goo00D007ooOomoo`00009oo`04001oogoo0003Ool005=oo`03001oogoo
+03]oo`8000Aoo`04001oogoo000gOol20003Ool00`00Oomoo`0hOol01@00Oomoogoo00000Woo00@0
+07ooOol000=oo`00Dgoo1@00>Woo00<007ooOol00goo0P00>Goo00@007ooOomoo`D003Moo`<000Ao
+o`8000Aoo`005Goo00<007ooOol0ogoo2Goo000EOol00`00Oomoo`3oOol9Ool001Eoo`03001oogoo
+0?moo`Uoo`005Goo00<007ooOol0ogoo2Goo000?Oooo000A0001Ool001Eoo`03001oogoo00Yoo`03
+001oogoo00Yoo`03001oogoo00Yoo`03001oogoo00Yoo`03001oogoo00Yoo`03001oogoo00Yoo`03
+001oogoo00Yoo`03001oogoo00Yoo`03001oogoo00Yoo`03001oogoo00Uoo`03001oogoo00Yoo`04
+001oogooOomb0007Ool001Eoo`03001oogoo03ioo`03001oogoo02eoob40031oo`03001oogoo03io
+o`03001oogoo00Eoo`005Goo00<007ooOol0EWoo6000CWooA@001goo000EOol00`00Oomoo`1>Ool8
+000kOol[001<Ool001Eoo`03001oogoo04Moo`L002eooaH007Moo`005Goo00<007ooOol0?7oo2`00
+7Woo5P00SGoo000EOol00`00Oomoo`0hOol4000NOol;002SOol001Eoo`8003Ioo`<001Yoo`P00:io
+o`005Goo00<007ooOol0<goo0P005goo1P00]Woo000EOol00`00Oomoo`0`Ool3000AOol8002lOol0
+01Eoo`03001oogoo02ioo`8000ioo`H00<Aoo`005Goo00<007ooOol0:goo0`003Goo0`00bWoo000E
+Ool00`00Oomoo`0XOol3000;Ool5003=Ool001Eoo`03001oogoo02Ioo`8000Yoo`@00<Eoo`H000Mo
+o`005Goo00<007ooOol09Goo00<007ooOol01goo0`00ZWoo7`003Goo000EOol2000TOol20008Ool2
+002GOolF000/Ool001Eoo`03001oogoo029oo`03001oogoo00Ioo`8008=ooaH0049oo`005Goo00<0
+07ooOol08Goo00<007ooOol01Woo00<007ooOol0KWoo5@00F7oo000EOol00`00Oomoo`0POol00`00
+Oomoo`05Ool2001VOol;001]Ool001Eoo`03001oogoo01moo`03001oogoo00Aoo`80059ooaH007Qo
+o`005Goo00<007ooOol07Woo00<007ooOol00goo0P00BGoo2`00SWoo000EOol00`00Oomoo`0NOol0
+1000Oomoogoo0P00@Woo2@00VGoo000EOol00`00Oomoo`0MOol01@00Oomoogoo0000?goo1@00XWoo
+000EOol2000MOol01@00Oomoogoo0000>7oo2000Ygoo000EOol00`00Oomoo`0KOol01@00Oomoogoo
+0000<Goo2000[goo000EOol00`00Oomoo`0JOol01@00Oomoogoo0000;Goo1@00]goo000EOol00`00
+Oomoo`0IOol01@00Oomoogoo0000:7oo1P00_7oo000EOol00`00Oomoo`0IOol01000Oomoo`0097oo
+1@00`Woo0002Ool20004Ool01000Oomoogoo1@0017oo00<007ooOol067oo00@007ooOol0021oo`D0
+0<Moo`0000Eoo`00Oomoo`0000Qoo`04001oogoo0004Ool00`00Oomoo`0GOol01@00Oomoogoo0000
+77oo1000c7oo00001Goo001oogoo00002Goo00<007ooOol017oo00<007ooOol05goo00@007ooOol0
+01Yoo`<00=1oo`0000Eoo`00Oomoo`0000Yoo`03001oogoo00=oo`<001Ioo`04001oogoo000HOol3
+003COol00005Ool007ooOol00007Ool01@00Oomoogoo000017oo00<007ooOol05Woo00<007oo0000
+5Woo0`00eWoo00001Goo001oogoo00001goo00D007ooOomoo`0000Aoo`03001oogoo01Eoo`04001o
+ogoo000DOol2003IOol0009oo`8000Uoo`<000Eoo`03001oogoo01Aoo`04001oogoo000BOol3003K
+Ool001Eoo`03001oogoo01Aoo`03001oo`00015oo`800=ioo`005Goo00<007ooOol04goo00@007oo
+Ool000moo`800>1oo`005Goo00<007ooOol04goo00<007oo00003Woo0P00hWoo000EOol00`00Oomo
+o`0BOol01000Oomoo`0037oo0P00i7oo000EOol2000COol00`00Ool0000<Ool00`00Oomoo`3TOol0
+01Eoo`03001oogoo015oo`03001oo`0000aoo`03001oogoo0>Eoo`005Goo00<007ooOol04Goo00<0
+07oo00002goo00<007ooOol0iWoo000EOol00`00Oomoo`0AOol2000:Ool2003YOol001Eoo`03001o
+ogoo011oo`03001oo`0000Uoo`03001oogoo0>Uoo`005Goo00<007ooOol047oo0P002Goo00<007oo
+Ool0jWoo000EOol00`00Oomoo`0?Ool00`00Ool00008Ool00`00Oomoo`3[Ool001Eoo`03001oogoo
+00moo`8000Qoo`03001oogoo0>aoo`005Goo0P003goo00<007oo00001goo00<007ooOol0kGoo000E
+Ool00`00Oomoo`0>Ool20008Ool00`00Oomoo`3]Ool001Eoo`03001oogoo00ioo`8000Moo`03001o
+ogoo0>ioo`005Goo00<007ooOol03Goo00<007oo00001Woo00<007ooOol0kgoo000EOol00`00Oomo
+o`0=Ool20006Ool00`00Oomoo`3`Ool001Eoo`03001oogoo00eoo`8000Ioo`03001oogoo0?1oo`00
+5Goo00<007ooOol037oo00<007oo00001Goo00<007ooOol0lGoo000EOol00`00Oomoo`0<Ool20005
+Ool00`00Oomoo`3bOol001Eoo`8000eoo`8000Eoo`03001oogoo0?9oo`005Goo00<007ooOol02goo
+00<007oo000017oo00<007ooOol0lgoo000EOol00`00Oomoo`0;Ool00`00Ool00003Ool00`00Oomo
+o`3dOol001Eoo`03001oogoo00]oo`8000=oo`03001oogoo0?Eoo`005Goo00<007ooOol02goo0P00
+0goo00<007ooOol0mGoo0002Ool20004Ool00`00Oomoo`03Ool30004Ool00`00Oomoo`0:Ool00`00
+Ool00002Ool00`00Oomoo`3fOol00005Ool007ooOol0000:Ool00`00Oomoo`03Ool00`00Oomoo`0:
+Ool20003Ool00`00Oomoo`3fOol00005Ool007ooOol00007Ool50004Ool00`00Oomoo`0:Ool20002
+Ool00`00Oomoo`3gOol00005Ool007ooOol00007Ool01000Oomoo`001Goo0`002Woo0P000Woo00<0
+07ooOol0mgoo00001Goo001oogoo000027oo00<007oo00001Goo00<007ooOol02Goo00<007oo0000
+0Woo00<007ooOol0mgoo00001Goo001oogoo00002Goo0P001Goo00<007ooOol02Goo0P000Woo00<0
+07ooOol0n7oo0002Ool2000;Ool00`00Oomoo`03Ool00`00Oomoo`09Ool20002Ool00`00Oomoo`3h
+Ool001Eoo`03001oogoo00Uoo`800003Ool007oo0?Yoo`005Goo00<007ooOol027oo0P000Woo00<0
+07ooOol0nGoo000EOol00`00Oomoo`08Ool200000goo001oo`3kOol001Eoo`03001oogoo00Qoo`80
+0003Ool007oo0?]oo`005Goo0P002Goo0P0000=oo`00Ool0ngoo000EOol00`00Oomoo`08Ool00`00
+Ool0003mOol001Eoo`03001oogoo00Moo`800003Ool007oo0?aoo`005Goo00<007ooOol01goo0P00
+00=oo`00Ool0o7oo000EOol00`00Oomoo`07Ool00`00Ool0003nOol001Eoo`03001oogoo00Moo`03
+001oo`000?ioo`005Goo00<007ooOol01goo00<007oo0000oWoo000EOol00`00Oomoo`06Ool3003o
+Ool001Eoo`8000Moo`<00?moo`005Goo00<007ooOol01Woo00<007oo0000ogoo000EOol00`00Oomo
+o`06Ool2003oOol1Ool001Eoo`03001oogoo00Ioo`800?moo`5oo`005Goo00<007ooOol01Woo0P00
+ogoo0Goo000EOol00`00Oomoo`06Ool2003oOol1Ool001Eoo`03001oogoo00Eoo`<00?moo`5oo`00
+5Goo00<007ooOol01Goo0P00ogoo0Woo000EOol20006Ool2003oOol2Ool001Eoo`03001oogoo00Eo
+o`800?moo`9oo`005Goo00<007ooOol01Goo0P00ogoo0Woo000EOol00`00Oomoo`05Ool2003oOol2
+Ool001Eoo`03001oogoo00Eoo`800?moo`9oo`000Woo0P0017oo00<007ooOol00Woo0`001Goo00<0
+07ooOol017oo0P00ogoo0goo00001Goo001oogoo00001goo00D007ooOomoo`0000Aoo`03001oogoo
+00Aoo`800?moo`=oo`0000Eoo`00Oomoo`0000Moo`05001oogooOol00004Ool00`00Oomoo`04Ool2
+003oOol3Ool00005Ool007ooOol00007Ool40005Ool30004Ool2003oOol3Ool00005Ool007ooOol0
+0007Ool00`00Oomoo`06Ool00`00Oomoo`04Ool2003oOol3Ool00005Ool007ooOol00008Ool00`00
+Oomoo`05Ool00`00Oomoo`04Ool2003oOol3Ool0009oo`8000Yoo`8000Eoo`03001oogoo00Aoo`03
+001oogoo0?moo`9oo`005Goo00<007ooOol00goo0P00ogoo17oo000EOol00`00Oomoo`03Ool2003o
+Ool4Ool001Eoo`03001oogoo00=oo`800?moo`Aoo`005Goo00<007ooOol00goo0P00ogoo17oo000E
+Ool20004Ool00`00Oomoo`3oOol3Ool001Eoo`03001oogoo00=oo`03001oogoo0?moo`=oo`005Goo
+00<007ooOol00goo00<007ooOol0ogoo0goo000EOol00`00Oomoo`02Ool2003oOol5Ool001Eoo`03
+001oogoo009oo`800?moo`Eoo`005Goo00<007ooOol00Woo0P00ogoo1Goo000EOol00`00Oomoo`02
+Ool00`00Oomoo`3oOol4Ool001Eoo`03001oogoo009oo`03001oogoo0?moo`Aoo`005Goo0P000goo
+00<007ooOol0ogoo17oo000EOol00`00Oomoo`02Ool00`00Oomoo`3oOol4Ool001Eoo`04001oogoo
+Ool2003oOol6Ool001Eoo`04001oogooOol2003oOol6Ool001Eoo`04001oogooOol2003oOol6Ool0
+01Eoo`05001oogooOol0003oOol7Ool001Eoo`05001oogooOol0003oOol7Ool001Eoo`05001oogoo
+Ool0003oOol7Ool001Eoo`80009oo`03001oogoo0?moo`Eoo`005Goo00D007ooOomoo`000?moo`Mo
+o`005Goo00<007ooOol00P00ogoo1goo000EOol00`00Oomoo`02003oOol7Ool001Eoo`04001oogoo
+003oOol8Ool0009oo`8000Aoo`03001oogoo009oo`<000Eoo`04001oogoo003oOol8Ool00005Ool0
+07ooOol00007Ool01@00Oomoogoo000017oo00@007ooOol00?moo`Qoo`0000Eoo`00Oomoo`0000Mo
+o`05001oogooOol00004Ool01000Oomoo`00ogoo27oo00001Goo001oogoo000027oo0`001Goo1000
+ogoo27oo00001Goo001oogoo00001goo00D007ooOomoo`0000Aoo`04001oogoo003oOol8Ool00005
+Ool007ooOol00007Ool01@00Oomoogoo000017oo00@007oo00000?moo`Qoo`000Woo0P002Goo0`00
+1Goo00<007oo0000ogoo2Goo000EOol00`00Ool0003oOol9Ool001Eoo`03001oo`000?moo`Uoo`00
+5Goo00<007oo0000ogoo2Goo000EOol00`00Ool0003oOol9Ool001Eoo`<00?moo`Uoo`005Goo00<0
+07oo0000ogoo2Goo000EOol00`00Ool0003oOol9Ool001Eoo`03001oo`000?moo`Uoo`005Goo00<0
+07oo0000ogoo2Goo000EOol2003oOol:Ool001Eoo`800?moo`Yoo`005Goo0P00ogoo2Woo000EOol2
+003oOol:Ool001Eoo`800?moo`Yoo`005Goo0P00ogoo2Woo000EOol2003oOol:Ool001Eoo`800?mo
+o`Yoo`005Goo0P00ogoo2Woo000EOol2003oOol:Ool001Eoo`800?moo`Yoo`005Goo0P00ogoo2Woo
+000EOol2003oOol:Ool001Eoo`03001oogoo0?moo`Uoo`005Goo00<007ooOol0ogoo2Goo000EOol0
+0`00Oomoo`3oOol9Ool000eoo`<000Eoo`03001oogoo0?moo`Uoo`003Woo00<007ooOol017oo00<0
+07ooOol0ogoo2Goo000>Ool00`00Oomoo`04Ool00`00Oomoo`3oOol9Ool000ioo`03001oogoo00Ao
+o`<00?moo`Uoo`003Woo00<007ooOol017oo00<007ooOol0ogoo2Goo000=Ool20006Ool00`00Oomo
+o`3oOol9Ool000ioo`03001oogoo00Aoo`03001oogoo0?moo`Uoo`005Goo00<007ooOol0ogoo2Goo
+0000\
+\>"],
+  ImageRangeCache->{{{0, 287}, {176.938, 0}} -> {-1, 0, 0, 0}}],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"\[SkeletonIndicator]", "Graphics", "\[SkeletonIndicator]"}],
+      False,
+      Editable->False]], "Output",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Analytic Integrals", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"Integrate", "[", 
+      RowBox[{
+        RowBox[{
+          RowBox[{
+            RowBox[{"BesselI", "[", 
+              RowBox[{"0", ",", 
+                RowBox[{"t", "/", "3"}]}], "]"}], "^", "3"}], " ", 
+          RowBox[{"Exp", "[", 
+            RowBox[{"-", "t"}], "]"}]}], ",", 
+        RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      SubsuperscriptBox["\[Integral]", "0", "\[Infinity]"], 
+      RowBox[{
+        RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"-", "t"}]], " ", 
+          SuperscriptBox[
+            RowBox[{"BesselI", "[", 
+              RowBox[{"0", ",", 
+                FractionBox["t", "3"]}], "]"}], "3"]}], 
+        RowBox[{"\[DifferentialD]", "t"}]}]}]], "Output",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"Integrate", "[", 
+      RowBox[{
+        RowBox[{
+          RowBox[{
+            RowBox[{"BesselI", "[", 
+              RowBox[{"0", ",", 
+                RowBox[{"t", "/", "4"}]}], "]"}], "^", "4"}], " ", 
+          RowBox[{"Exp", "[", 
+            RowBox[{"-", "t"}], "]"}]}], ",", 
+        RowBox[{"{", 
+          RowBox[{"t", ",", "0", ",", "Infinity"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      SubsuperscriptBox["\[Integral]", "0", "\[Infinity]"], 
+      RowBox[{
+        RowBox[{
+          SuperscriptBox["\[ExponentialE]", 
+            RowBox[{"-", "t"}]], " ", 
+          SuperscriptBox[
+            RowBox[{"BesselI", "[", 
+              RowBox[{"0", ",", 
+                FractionBox["t", "4"]}], "]"}], "4"]}], 
+        RowBox[{"\[DifferentialD]", "t"}]}]}]], "Output",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Numerical Integrals", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"FindRoot", "[", 
+      RowBox[{
+        RowBox[{
+          RowBox[{
+            SuperscriptBox[
+              RowBox[{"BesselI", "[", 
+                RowBox[{"0", ",", 
+                  FractionBox["t", "5"]}], "]"}], "5"], " ", 
+            SuperscriptBox["\[ExponentialE]", 
+              RowBox[{"-", "t"}]]}], "\[Equal]", 
+          RowBox[{"10", "^", 
+            RowBox[{"-", "12"}]}]}], ",", 
+        RowBox[{"{", 
+          RowBox[{"t", ",", 
+            RowBox[{"10", "^", "5"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{"t", "\[Rule]", "50211.2401737375`"}], "}"}]], "Output",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"FindRoot", "[", 
+      RowBox[{
+        RowBox[{
+          RowBox[{
+            SuperscriptBox[
+              RowBox[{"BesselI", "[", 
+                RowBox[{"0", ",", 
+                  FractionBox["t", "5"]}], "]"}], "5"], " ", 
+            SuperscriptBox["\[ExponentialE]", 
+              RowBox[{"-", "t"}]]}], "\[Equal]", 
+          RowBox[{"10", "^", 
+            RowBox[{"-", "13"}]}]}], ",", 
+        RowBox[{"{", 
+          RowBox[{"t", ",", 
+            RowBox[{"10", "^", "6"}]}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{"t", "\[Rule]", "126123.04294539131`"}], "}"}]], "Output",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"Polya", "[", 
+        RowBox[{"n_", ",", "opts___"}], "]"}], ":=", 
+      RowBox[{"1", "-", 
+        RowBox[{"1", "/", 
+          RowBox[{"NIntegrate", "[", 
+            RowBox[{
+              RowBox[{
+                RowBox[{
+                  RowBox[{"BesselI", "[", 
+                    RowBox[{"0", ",", 
+                      RowBox[{"t", "/", "n"}]}], "]"}], "^", "n"}], " ", 
+                RowBox[{"Exp", "[", 
+                  RowBox[{"-", "t"}], "]"}]}], ",", 
+              RowBox[{"{", 
+                RowBox[{"t", ",", "0", ",", 
+                  RowBox[{
+                    RowBox[{"UpperLimit", "/.", 
+                      RowBox[{"{", "opts", "}"}]}], "/.", 
+                    RowBox[{"UpperLimit", "\[Rule]", 
+                      RowBox[{"10", "^", "9"}]}]}]}], "}"}], ",", 
+              "\[IndentingNewLine]", "opts", ",", 
+              RowBox[{"SingularityDepth", "\[Rule]", "30"}], ",", 
+              RowBox[{"WorkingPrecision", "\[Rule]", "50"}], ",", 
+              RowBox[{"PrecisionGoal", "\[Rule]", "5"}], ",", 
+              RowBox[{"MaxRecursion", "\[Rule]", "50"}]}], 
+            "]"}]}]}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"Table", "[", 
+        RowBox[{
+          RowBox[{"{", 
+            RowBox[{"n", ",", 
+              RowBox[{"Polya", "[", 
+                RowBox[{"n", ",", 
+                  RowBox[{"10", "^", "8"}], ",", 
+                  RowBox[{"PrecisionGoal", "\[Rule]", "11"}]}], "]"}]}], 
+            "}"}], ",", 
+          RowBox[{"{", 
+            RowBox[{"n", ",", "4", ",", "8"}], "}"}]}], "]"}], "//", 
+      "TableForm"}]], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"4", "0.1932016705868901606439314167`16.019748867198807"},
+          {"5", "0.1351786098203736234205133108`16.163405239352628"},
+          {"6", "0.1047154956288219759276729462`16.330450636767218"},
+          {"7", "0.085844934113379009183229331`16.492566972302004"},
+          {"8", "0.0729126499593839984697446522`10.062480832476687"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ BoxForm`e$]]]], "Output",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"Table", "[", 
+        RowBox[{
+          RowBox[{"{", 
+            RowBox[{"n", ",", 
+              RowBox[{"Polya", "[", 
+                RowBox[{"n", ",", 
+                  RowBox[{"PrecisionGoal", "\[Rule]", "11"}]}], "]"}]}], 
+            "}"}], ",", 
+          RowBox[{"{", 
+            RowBox[{"n", ",", "4", ",", "8"}], "}"}]}], "]"}], "//", 
+      "TableForm"}]], "Input"],
+
+Cell[BoxData[
+    TagBox[GridBox[{
+          {"4", "0.1932016729611745628227121912`13.795690939618405"},
+          {"5", "0.1351786098206463839349761261`13.919936290135354"},
+          {"6", "0.1047154956288220104771512315`14.06809625470183"},
+          {"7", "0.0858449341133790091880927067`14.21242111363059"},
+          {"8", "0.0729126499593839984697453546`14.345598587980101"}
+          },
+        RowSpacings->1,
+        ColumnSpacings->3,
+        RowAlignments->Baseline,
+        ColumnAlignments->{Left}],
+      Function[ BoxForm`e$, 
+        TableForm[ BoxForm`e$]]]], "Output",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["OEIS", "Section"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"<<", "Utilities`EISFormat`"}]], "Input"],
+
+Cell[BoxData["\<\"EISFormat.m version 1.04 by Olivier Gerard and Eric \
+Weisstein.\"\>"], "Print",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData["\<\"e-mail FormatSequence to njas@research.att.com\"\>"], \
+"Print",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData["\<\"e-mail LookupFormat   to sequences@research.att.com\"\>"], \
+"Print",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData["\<\"                      or superseeker@research.att.com \
+(single line only)\"\>"], "Print",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]],
+
+Cell[BoxData[
+    StyleBox[
+      RowBox[{
+        RowBox[{"86230", " ", "--"}], "-", " ", "86231."}],
+      FontFamily->"Lucida Grande",
+      FontSize->13]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"FormatSequence", "[", 
+      RowBox[{
+        RowBox[{
+          RowBox[{"RealDigits", "[", 
+            RowBox[{
+              RowBox[{"p3", "=", 
+                RowBox[{"1", "-", 
+                  RowBox[{"1", "/", 
+                    RowBox[{"(", 
+                      RowBox[{
+                        RowBox[{
+                          RowBox[{"Sqrt", "[", "6", "]"}], "/", 
+                          RowBox[{"(", 
+                            RowBox[{"32", 
+                              RowBox[{"Pi", "^", "3"}]}], ")"}]}], 
+                        RowBox[{"Times", "@@", 
+                          RowBox[{"(", 
+                            RowBox[{
+                              RowBox[{
+                                RowBox[{"Gamma", "[", 
+                                  RowBox[{"#", "/", "24"}], "]"}], "&"}], "/@",
+                               
+                              RowBox[{"{", 
+                                RowBox[{"1", ",", "5", ",", "7", ",", "11"}], 
+                                "}"}]}], ")"}]}]}], ")"}]}]}]}], ",", "10", 
+              ",", "110"}], "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", "\[IndentingNewLine]", "86230",
+         ",", "0", ",", "\[IndentingNewLine]", 
+        RowBox[{
+        "Name", "->", 
+          "\"\<Probability that a random walk on a 3-D lattice returns to the \
+origin.\>\""}], ",", "\[IndentingNewLine]", 
+        RowBox[{"html", "[", "\"\<Polya's Random Walk Constants\>\"", "]"}], 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{"Example", "\[Rule]", 
+          RowBox[{
+            RowBox[{"StringDrop", "[", 
+              RowBox[{
+                RowBox[{"ToString", "[", 
+                  RowBox[{"N", "[", "p3", "]"}], "]"}], ",", 
+                RowBox[{"-", "1"}]}], "]"}], "<>", "\"\<...\>\""}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Keyw", "\[Rule]", 
+          RowBox[{"{", 
+            RowBox[{"\"\<new\>\"", ",", "\"\<cons\>\""}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"FormatSequence", "::", "\<\"HeyYou\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"My respects to you, Master \
+\\!\\(\\\"Eric\\\"\\).\"\>"}]], "Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell["\<\
+%I A086230 
+%S A086230 \
+3,4,0,5,3,7,3,2,9,5,5,0,9,9,9,1,4,2,8,2,6,2,7,3,1,8,4,4,3,2,9,0,2,8,
+%T A086230 \
+9,6,7,1,0,6,0,8,2,1,7,1,2,4,3,0,2,0,9,7,7,6,3,2,3,6,1,0,5,3,7,7,7,9,
+%U A086230 \
+1,9,6,9,4,5,8,9,6,2,3,8,4,6,4,2,5,2,8,0,8,1,8,8,9,0,5,7,1,3,0,9,9,4
+%N A086230 Probability that a random walk on a 3-D lattice returns to the \
+origin.
+%H A086230 Eric Weisstein's World of Mathematics, <a \
+href=\"http://mathworld.wolfram.com/PolyasRandomWalkConstants.html\">Polya's \
+Random Walk Constants</a>
+%A A086230 Eric W. Weisstein (eric(AT)weisstein.com), Jul 12, 2003
+%O A086230 0,1
+%e A086230 0.34053...
+%K A086230 nonn,cons,new\
+\>", "Print",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"FormatSequence", "[", 
+      RowBox[{
+        RowBox[{
+          RowBox[{"RealDigits", "[", 
+            RowBox[{
+              RowBox[{"u3", "=", 
+                RowBox[{
+                  RowBox[{
+                    RowBox[{"Sqrt", "[", "6", "]"}], "/", 
+                    RowBox[{"(", 
+                      RowBox[{"32", 
+                        RowBox[{"Pi", "^", "3"}]}], ")"}]}], 
+                  RowBox[{"Times", "@@", 
+                    RowBox[{"(", 
+                      RowBox[{
+                        RowBox[{
+                          RowBox[{"Gamma", "[", 
+                            RowBox[{"#", "/", "24"}], "]"}], "&"}], "/@", 
+                        RowBox[{"{", 
+                          RowBox[{"1", ",", "5", ",", "7", ",", "11"}], 
+                          "}"}]}], ")"}]}]}]}], ",", "10", ",", "110"}], 
+            "]"}], "[", 
+          RowBox[{"[", "1", "]"}], "]"}], ",", "\[IndentingNewLine]", "86231",
+         ",", "1", ",", "\[IndentingNewLine]", 
+        RowBox[{"Name", "->", "\"\<Value of Watson's integral.\>\""}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"html", "[", "\"\<Polya's Random Walk Constants\>\"", "]"}], 
+        ",", "\[IndentingNewLine]", 
+        RowBox[{"Example", "\[Rule]", 
+          RowBox[{
+            RowBox[{"StringDrop", "[", 
+              RowBox[{
+                RowBox[{"ToString", "[", 
+                  RowBox[{"N", "[", "u3", "]"}], "]"}], ",", 
+                RowBox[{"-", "1"}]}], "]"}], "<>", "\"\<...\>\""}]}], ",", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Keyw", "\[Rule]", 
+          RowBox[{"{", 
+            RowBox[{"\"\<new\>\"", ",", "\"\<cons\>\""}], "}"}]}]}], 
+      "\[IndentingNewLine]", "]"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"FormatSequence", "::", "\<\"HeyYou\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"My respects to you, Master \
+\\!\\(\\\"Eric\\\"\\).\"\>"}]], "Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell["\<\
+%I A086231 
+%S A086231 \
+1,5,1,6,3,8,6,0,5,9,1,5,1,9,7,8,0,1,8,1,5,6,0,1,2,1,5,9,6,8,1,4,2,0,
+%T A086231 \
+7,7,9,9,5,5,3,8,7,0,4,4,4,5,2,2,6,2,6,7,6,5,6,6,9,8,0,4,6,3,6,5,8,0,
+%U A086231 \
+8,6,3,2,0,3,5,3,5,2,1,4,5,0,4,0,1,6,1,1,7,4,1,2,0,9,6,8,8,1,1,3,9,2
+%N A086231 Value of Watson's integral.
+%H A086231 Eric Weisstein's World of Mathematics, <a \
+href=\"http://mathworld.wolfram.com/PolyasRandomWalkConstants.html\">Polya's \
+Random Walk Constants</a>
+%A A086231 Eric W. Weisstein (eric(AT)weisstein.com), Jul 12, 2003
+%O A086231 1,2
+%e A086231 1.5163...
+%K A086231 nonn,cons,new\
+\>", "Print",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]],
+
+Cell[BoxData[
+    StyleBox[
+      RowBox[{
+        RowBox[{"86232", " ", "--"}], "-", " ", "86236"}],
+      FontFamily->"Lucida Grande",
+      FontSize->13]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    RowBox[{"Do", "[", "\[IndentingNewLine]", 
+      RowBox[{
+        RowBox[{"FormatSequence", "[", 
+          RowBox[{
+            RowBox[{"Most", "[", 
+              RowBox[{
+                RowBox[{"RealDigits", "[", 
+                  RowBox[{
+                    RowBox[{"p", "=", 
+                      RowBox[{"Polya", "[", 
+                        RowBox[{"n", ",", 
+                          RowBox[{"PrecisionGoal", "\[Rule]", "6"}]}], 
+                        "]"}]}], ",", "10"}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"86228", "+", "n"}], ",", "0", ",", "\[IndentingNewLine]",
+             
+            RowBox[{"Name", "->", 
+              RowBox[{"\"\<Probability that a random walk on an \>\"", "<>", 
+                RowBox[{"ToString", "[", "n", "]"}], "<>", 
+                "\"\<-d lattice returns to the origin.\>\""}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Keyw", "\[Rule]", 
+              RowBox[{"{", 
+                RowBox[{"\"\<cons\>\"", ",", "\"\<new\>\""}], "}"}]}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"Comments", "\[Rule]", 
+              RowBox[{
+                RowBox[{"StringDrop", "[", 
+                  RowBox[{
+                    RowBox[{"ToString", "[", "p", "]"}], ",", 
+                    RowBox[{"-", "1"}]}], "]"}], "<>", "\"\<...\>\""}]}]}], 
+          "\[IndentingNewLine]", "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{"{", 
+          RowBox[{"n", ",", "4", ",", "8"}], "}"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"FormatSequence", "::", "\<\"GiveMeMore\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"if you can, give enough terms for three \
+lines.\"\>"}]], "Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"FormatSequence", "::", "\<\"HeyYou\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"My respects to you, Master \
+\\!\\(\\\"Eric\\\"\\).\"\>"}]], "Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell["\<\
+%I A086232 
+%S A086232 1,9,3,2,0,1,6
+%N A086232 Probability that a random walk on an 4-d lattice returns to the \
+origin.
+%A A086232 Eric W. Weisstein (eric(AT)weisstein.com), Jul 12, 2003
+%O A086232 0,2
+%K A086232 nonn,cons,more,new
+%C A086232 0.1932016...
+%I A086233 
+%S A086233 1,3,5,1,7,8,6
+%N A086233 Probability that a random walk on an 5-d lattice returns to the \
+origin.
+%A A086233 Eric W. Weisstein (eric(AT)weisstein.com), Jul 12, 2003
+%O A086233 0,2
+%K A086233 nonn,cons,more,new
+%C A086233 0.1351786...
+%I A086234 
+%S A086234 1,0,4,7,1,5,4,9
+%N A086234 Probability that a random walk on an 6-d lattice returns to the \
+origin.
+%A A086234 Eric W. Weisstein (eric(AT)weisstein.com), Jul 12, 2003
+%O A086234 0,3
+%K A086234 nonn,cons,more,new
+%C A086234 0.10471549...
+%I A086235 
+%S A086235 8,5,8,4,4,9,3
+%N A086235 Probability that a random walk on an 7-d lattice returns to the \
+origin.
+%A A086235 Eric W. Weisstein (eric(AT)weisstein.com), Jul 12, 2003
+%O A086235 0,1
+%K A086235 nonn,cons,more,new
+%C A086235 0.08584493...
+%I A086236 
+%S A086236 7,2,9,1,2,6,5
+%N A086236 Probability that a random walk on an 8-d lattice returns to the \
+origin.
+%A A086236 Eric W. Weisstein (eric(AT)weisstein.com), Jul 12, 2003
+%O A086236 0,1
+%K A086236 nonn,cons,more,new
+%C A086236 0.07291265...\
+\>", "Print",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"FormatSequence", "::", "\<\"GiveMeMore\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"if you can, give enough terms for three \
+lines.\"\>"}]], "Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"FormatSequence", "::", "\<\"HeyYou\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"My respects to you, Master \
+\\!\\(\\\"Eric\\\"\\).\"\>"}]], "Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"FormatSequence", "::", "\<\"GiveMeMore\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"if you can, give enough terms for three \
+lines.\"\>"}]], "Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"General", "::", "\<\"stop\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"Further output of \\!\\(FormatSequence :: \
+\\\"GiveMeMore\\\"\\) will be suppressed during this calculation. \
+\\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\
+\\\", ButtonFrame->None, ButtonData:>\\\"General::stop\\\"]\\)\"\>"}]], \
+"Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"FormatSequence", "::", "\<\"HeyYou\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"My respects to you, Master \
+\\!\\(\\\"Eric\\\"\\).\"\>"}]], "Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False],
+
+Cell[BoxData[
+    RowBox[{
+      RowBox[{"General", "::", "\<\"stop\"\>"}], 
+      RowBox[{
+      ":", " "}], "\<\"Further output of \\!\\(FormatSequence :: \\\"HeyYou\\\
+\"\\) will be suppressed during this calculation. \\!\\(\\*ButtonBox[\\\"More\
+\[Ellipsis]\\\", ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::stop\\\"]\\)\"\>"}]], "Message",
+  GeneratedCell->False,
+  CellAutoOverwrite->False]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[""], "Input"],
+
+Cell[BoxData["$Aborted"], "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Macintosh",
+ScreenRectangle->{{0, 1440}, {0, 837}},
+WindowSize->{675, 706},
+WindowMargins->{{352, Automatic}, {Automatic, 0}},
+ShowSelection->True,
+StyleDefinitions -> "Default.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 54, 0, 88, "Title"],
+
+Cell[CellGroupData[{
+Cell[1855, 57, 28, 0, 70, "Subsection"],
+Cell[1886, 59, 58, 3, 70, "Text"],
+Cell[1947, 64, 324, 10, 70, "Text"],
+Cell[2274, 76, 348, 11, 70, "Text"],
+Cell[2625, 89, 1109, 28, 70, "Text"],
+Cell[3737, 119, 101, 3, 70, "Text"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[3875, 127, 43, 0, 70, "Section"],
+
+Cell[CellGroupData[{
+Cell[3943, 131, 31, 0, 70, "Subsection"],
+
+Cell[CellGroupData[{
+Cell[3999, 135, 936, 24, 70, "Input"],
+Cell[4938, 161, 195, 6, 70, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[5182, 173, 36, 0, 70, "Subsection"],
+
+Cell[CellGroupData[{
+Cell[5243, 177, 596, 15, 70, "Subsubsection"],
+Cell[5842, 194, 612, 17, 70, "Input"],
+
+Cell[CellGroupData[{
+Cell[6479, 215, 86, 2, 70, "Input"],
+Cell[6568, 219, 71, 0, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6676, 224, 144, 4, 70, "Input"],
+Cell[6823, 230, 71, 0, 70, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6943, 236, 887, 24, 70, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[7855, 264, 1021, 26, 70, "Input"],
+Cell[8879, 292, 71, 0, 70, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8999, 298, 662, 19, 70, "Subsubsection"],
+
+Cell[CellGroupData[{
+Cell[9686, 321, 1012, 25, 70, "Input"],
+Cell[10701, 348, 71, 0, 70, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[10845, 356, 24, 0, 70, "Section"],
+
+Cell[CellGroupData[{
+Cell[10894, 360, 628, 16, 70, "Input"],
+Cell[11525, 378, 13049, 417, 70, 4439, 305, "GraphicsData", "PostScript", \
+"Graphics"],
+Cell[24577, 797, 201, 6, 70, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[24827, 809, 37, 0, 70, "Section"],
+
+Cell[CellGroupData[{
+Cell[24889, 813, 411, 11, 70, "Input"],
+Cell[25303, 826, 466, 13, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[25806, 844, 411, 11, 70, "Input"],
+Cell[26220, 857, 466, 13, 70, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[26735, 876, 38, 0, 70, "Section"],
+
+Cell[CellGroupData[{
+Cell[26798, 880, 545, 15, 70, "Input"],
+Cell[27346, 897, 154, 4, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[27537, 906, 545, 15, 70, "Input"],
+Cell[28085, 923, 156, 4, 70, "Output"]
+}, Open  ]],
+Cell[28256, 930, 1186, 27, 70, "Input"],
+
+Cell[CellGroupData[{
+Cell[29467, 961, 473, 13, 70, "Input"],
+Cell[29943, 976, 640, 15, 70, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[30620, 996, 423, 12, 70, "Input"],
+Cell[31046, 1010, 639, 15, 70, "Output"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[31734, 1031, 23, 0, 70, "Section"],
+
+Cell[CellGroupData[{
+Cell[31782, 1035, 67, 1, 70, "Input"],
+Cell[31852, 1038, 150, 3, 70, "Print"],
+Cell[32005, 1043, 134, 3, 70, "Print"],
+Cell[32142, 1048, 139, 3, 70, "Print"],
+Cell[32284, 1053, 160, 3, 70, "Print"]
+}, Open  ]],
+Cell[32459, 1059, 168, 5, 70, "Input"],
+
+Cell[CellGroupData[{
+Cell[32652, 1068, 2048, 46, 70, "Input"],
+Cell[34703, 1116, 247, 7, 70, "Message"],
+Cell[34953, 1125, 706, 19, 70, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[35696, 1149, 1752, 40, 70, "Input"],
+Cell[37451, 1191, 247, 7, 70, "Message"],
+Cell[37701, 1200, 660, 18, 70, "Print"]
+}, Open  ]],
+Cell[38376, 1221, 167, 5, 70, "Input"],
+
+Cell[CellGroupData[{
+Cell[38568, 1230, 1611, 35, 70, "Input"],
+Cell[40182, 1267, 248, 7, 21, "Message"],
+Cell[40433, 1276, 247, 7, 70, "Message"],
+Cell[40683, 1285, 1371, 43, 608, "Print"],
+Cell[42057, 1330, 248, 7, 21, "Message"],
+Cell[42308, 1339, 247, 7, 21, "Message"],
+Cell[42558, 1348, 248, 7, 21, "Message"],
+Cell[42809, 1357, 442, 10, 35, "Message"],
+Cell[43254, 1369, 247, 7, 21, "Message"],
+Cell[43504, 1378, 436, 9, 35, "Message"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[43977, 1392, 26, 0, 27, "Input"],
+Cell[44006, 1394, 35, 0, 27, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
